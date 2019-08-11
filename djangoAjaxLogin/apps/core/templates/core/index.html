@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+
+
+{% block content %}
+      <h4 class="text-center">Django Application for handling Login with Ajax and Class-Based Views.</h4>
+      <br>
+      <ul class="list-group">
+        <li class="list-group-item list-group-item-info">
+          click in 'login' to sign-in
+        </li>
+        <li class="list-group-item list-group-item-info">
+          click in 'home' to go to home's user
+        </li>
+      </ul>
+      <br>
+      <h4 class="text-center">Menu:</h4>
+
+      <div class="list-group">
+        <a href="{% url 'core:login' %}" class="list-group-item list-group-item-action text-center">Login</a>
+        <a href="{% url 'core:home' %}" class="list-group-item list-group-item-action text-center">Home</a>
+      </div>
+{% endblock %}

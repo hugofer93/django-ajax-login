@@ -1,0 +1,42 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'core/css/bootstrap.min.css' %}">
+
+    {# extra styles #}
+    {% block css %}
+    {% endblock %}
+
+    <title>Ajax Login with Django!</title>
+  </head>
+  <body>
+    <div class="container">
+      <br>
+      <h1 class="text-center">Django Ajax Login</h1>
+      {% block content %}
+      {% endblock %}
+    </div>
+
+    <footer class="py-4 bg-dark text-white-50 fixed-bottom">
+      <div class="container text-center">
+        <small>Apache License 2.0 | developed by
+          <a href="https://devlance.me" target="_blank">Devlance.me</a>
+        </small>
+      </div>
+    </footer>
+
+    <script src="{% static 'core/js/jquery-3.3.1-slim.min.js' %}"></script>
+    <script src="{% static 'core/js/bootstrap.min.js' %}"></script>
+
+    {# extra scripts #}
+    {% block js %}
+    {% endblock %}
+
+  </body>
+</html>

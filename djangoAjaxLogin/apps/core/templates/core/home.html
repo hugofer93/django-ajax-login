@@ -1,0 +1,24 @@
+{% extends 'core/base.html' %}
+
+
+{% block content %}
+      <h4 class="text-center">Django Application for handling Login with Ajax and Class-Based Views.</h4>
+      <br>
+      <ul class="list-group">
+        <li class="list-group-item list-group-item-primary">
+          You are logged in {{ request.user.username }}!
+        </li>
+        <li class="list-group-item list-group-item-primary">
+          Your email is: {{ request.user.email }}
+        </li>
+        <li class="list-group-item list-group-item-info">
+          click in 'logout' to sign-out
+        </li>
+      </ul>
+      <br>
+      <h4 class="text-center">Menu:</h4>
+
+      <div class="list-group">
+        <a href="{% url 'core:logout' %}" class="list-group-item list-group-item-action list-group-item-danger text-center">Logout</a>
+      </div>
+{% endblock %}
