@@ -1,12 +1,13 @@
-# djangoAjaxLogin
+# django ajax login
+
 Implementation of a modern Login with Ajax in Django
 
-* Django 2.2.4 LTS
-* jQuery 3.3.1 Slim
-* Bootstrap 4.3.1
-* Axios 0.19
+* Django    ~2.2 LTS
+* jQuery    ~3.3 Slim
+* Bootstrap ~4.3
+* Axios     ~0.19
 
-#### Note:
+#### NOTE:
 * User Search by email or username
 * Disabled username field, it's automatically filled in with the user search
 * Class-Based Views
@@ -18,26 +19,26 @@ Implementation of a modern Login with Ajax in Django
 # Captures:
 ## Index View
 
-![](capture/index.png)
+![](screenshots/index.png)
 
 ## Login View - Search User
 
-![](capture/login-search-user.png)
+![](screenshots/login-search-user.png)
 
 ## Login View - Search User with error
 
-![](capture/login-search-user-error.png)
+![](screenshots/login-search-user-error.png)
 
 ## Login View - Login Form after the search
 
-![](capture/login-form-after-search.png)
+![](screenshots/login-form-after-search.png)
 
 ## Login View - Login Form with error
 
-![](capture/login-form-error.png)
+![](screenshots/login-form-error.png)
 
 ## Home View - Only logged in users
 
-![](capture/home.png)
+![](screenshots/home.png)
 
 ## Logout View - Return to Index View

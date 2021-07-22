@@ -24,13 +24,11 @@ class Login(LoginView):
             data = None
             status = None
 
-            search = request.GET['search']
+            search = request.GET.get('search')
 
             try:
-                query = (
-                    Q(username = search) |
-                    Q(email = search)
-                )
+                query = (Q(username = search)
+                         | Q(email = search))
                 user = User.objects.get(query)
                 data = {'username': user.username}
                 status = 200
@@ -39,7 +37,7 @@ class Login(LoginView):
                 status = 404
 
             return JsonResponse(data, safe=False, status=status)
-            
+
         return super().get(request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
@@ -49,11 +47,11 @@ class Login(LoginView):
         form = self.form_class(data=request.POST)
 
         if form.is_valid():
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
-            
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+
             user = authenticate(username=username, password=password)
-            if user is not None and user.is_active:
+            if user and user.is_active:
                 login(request, user)
                 data = {'success': True}
                 status = 200
